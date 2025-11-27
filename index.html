@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio - John</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <style>
+        body {
+            background: #1b1b1b;
+            font-family: 'Poppins', sans-serif;
+            color: #eee;
+            overflow-x: hidden;
+        }
+
+        /* Bolhas animadas */
+        .bubble {
+            position: absolute;
+            bottom: -150px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: rise 12s infinite ease-in;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(-1200px) scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        /* Colunas suspensas */
+        .card-floating {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .card-floating:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+        }
+
+        .bubble-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Seções criativas */
+        .section-title {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .creative-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.4));
+            border-radius: 25px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+            transition: .4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .creative-box:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .light-orb {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+            border-radius: 50%;
+            top: -40px;
+            right: -40px;
+            filter: blur(10px);
+            animation: float 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(25px);
+            }
+        }
+
+        /* Lista de habilidades estilizada */
+        .skill-item {
+            background: rgba(255, 255, 255, 0.07);
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            backdrop-filter: blur(6px);
+            transition: .3s;
+        }
+
+        .skill-item:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .creative-box p {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Bolhas -->
+    <div class="bubble-container">
+        <script>
+            for (let i = 0; i < 25; i++) {
+                let bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                bubble.style.left = Math.random() * 100 + '%';
+                bubble.style.animationDelay = Math.random() * 10 + 's';
+                bubble.style.width = bubble.style.height = (20 + Math.random() * 60) + 'px';
+                document.querySelector('.bubble-container').appendChild(bubble);
+            }
+        </script>
+    </div>
+
+    <!-- Header -->
+    <header class="text-center py-5">
+        <h1 style="letter-spacing: 2px;">Portifólio Profissional - Jonatas Silva Santos</h1>
+        <p style="color:#aaa;">Auxiliar Administrativo</p>
+    </header>
+
+    <div class="container pb-5">
+        <div class="row g-4">
+            <!-- SOBRE MIM -->
+            <div class="col-12 mb-4">
+                <div class="creative-box">
+                    <div class="light-orb"></div>
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <p>
+                        Sou estudante de Bacharelado em Sistemas de Informação, cursando o 6º semestre, e atuo há 10
+                        meses na área administrativa/analítica. Nesse período, desenvolvi forte domínio em Excel
+                        avançado, modelagem de dados e construção de relatórios estratégicos, incluindo dashboards,
+                        calculadoras comerciais, KPIs e automatizações voltadas ao time de vendas. Também aplico
+                        conceitos de Business Intelligence (BI) para criação de painéis,
+                        análises comparativas e consolidação de bases volumosas de dados.
+                        <br><br>
+                        Tenho perfil analítico, raciocínio lógico sólido e a capacidade de transformar
+                        dados brutos em informações úteis para a tomada de decisão. Meu objetivo é evoluir
+                        profissionalmente para cargos de análise de dados, inteligência comercial ou áreas de tecnologia
+                        voltadas a soluções analíticas e tomada de decisões.
+                    </p>
+                </div>
+            </div>
+
+            <!-- HABILIDADES -->
+            <div class="col-12 mb-4">
+                <div class="creative-box">
+                    <div class="light-orb"></div>
+                    <h2 class="section-title">Habilidades & Skills</h2>
+
+                    <div class="skill-item">Excel (Intermediário/Avançado): LET, PROCX, ÍNDICE, CORRESP, CONT.SES,
+                        filtros avançados, dashboards.</div>
+                    <div class="skill-item">Business Intelligence (BI): modelos relacionais, painéis e
+                        relatórios dinâmicos.
+                    </div>
+                    <div class="skill-item">UX e UI aplicados: Desenvolvimento de ferramentas e relatórios comerciais
+                        com foco em usabilidade, clareza visual e experiência do usuário, garantindo
+                        interfaces intuitivas e fáceis de operar pelo time comercial.
+                    </div>
+                    <div class="skill-item">Automação de planilhas e consolidação de dados.</div>
+                    <div class="skill-item">Lógica de programação e capacidade analítica na tomada de decisões
+                        comerciais.</div>
+                    <div class="skill-item">Rotinas de CRM, metas, positivação e indicadores comerciais.</div>
+
+                </div>
+            </div>
+            <br>
+            <!-- PROJETOS -->
+            <div class="col-12 mb-4">
+                <div class="creative-box">
+                    <div class="light-orb"></div>
+                    <h2 class="section-title">Projetos</h2>
+
+                    <div class="kpi-section text-center">
+                        <div class="skill-item">
+                            <p><strong>Dashboard de KPIs dos Representantes:</strong> consolidação de metas,
+                                positivação,
+                                preço médio,
+                                logística e mix.</p>
+
+                            <img src="/images/image.png" alt="KPIs Representantes" class="d-block mx-auto img-fluid"
+                                style="border-radius: 10px; max-width: 90%;">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="calculator-section text-center">
+                        <div class="skill-item">
+                            <p><strong>Calculadora de Bonificações:</strong> sistema realiza cálculo automático,
+                                aplicando
+                                conehcimentos de engenharia de regras e domínio da regra de negócios.
+                            </p>
+
+                            <img src="/images/image2.png" alt="Calculadora Bonificações"
+                                class="d-block mx-auto img-fluid" style="border-radius: 10px; max-width: 90%;">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="painel-section text-center">
+                        <div class="skill-item">
+                            <p><strong>Relatório de Positivação por Categoria, Período e RCA:</strong> uso de CONT.SES,
+                                modelagem de dados, filtragem dinâmica e
+                                estruturaçôes profissionais.
+                            </p>
+
+                            <img src="/images/image3.png" alt="KPIs Representantes" class="d-block mx-auto img-fluid"
+                                style="border-radius: 10px; max-width: 90%;">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="Comparative-section text-center">
+                        <div class="skill-item">
+                            <p><Strong>Comparativo de Vendas e Preço Médio por Categoria:</Strong>: fórmulas avançadas,
+                                análise de dados e interpretação de indicadores.</p>
+
+                            <img src="/images/image4.png" alt="KPIs Representantes" class="d-block mx-auto img-fluid"
+                                style="border-radius: 10px; max-width: 90%;">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="consultation-section text-center">
+                        <div class="skill-item">
+                            <p><strong>Painel de Consultas de Estoque:</strong> lógica analítica e modelagem de dados,
+                                domínio de excel avançado, otimização e performance de dados.</p>
+
+                            <img src="/images/image5.png" alt="KPIs Representantes" class="d-block mx-auto img-fluid"
+                                style="border-radius: 10px; max-width: 90%;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CONTATO -->
+            <div class="col-12 mb-4">
+                <div class="creative-box">
+                    <div class="light-orb"></div>
+                    <h2 class="section-title">Contato</h2>
+
+                    <p><strong>Email Principal:</strong> jonatasssantos18@gmail.com</p>
+                    <p><strong>Email Secundário:</strong> johnssillva2021@gmail.com</p>
+                    <p><strong>Telefone:</strong> (77) 98809-0431</p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5577988090431" target="_blank">Enviar
+                            mensagem</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jonatas-silva-santos/"
+                            target="_blank">Perfil profissional</a></p>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
